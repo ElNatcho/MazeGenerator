@@ -21,9 +21,15 @@
     <ClCompile Include="CMazeGenerator.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="CMazeSaver.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CMazeGenerator.hpp">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="CMazeSaver.hpp">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>

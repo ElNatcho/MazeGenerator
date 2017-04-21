@@ -4,7 +4,7 @@
 CMazeGenerator::CMazeGenerator() {
 	// Alloc Memory
 	_mazeSize = new MazeSize();
-	_mazeData = new std::vector<std::vector<BYTE>>();
+	_mazeData = new Maze();
 	_curOption = new BYTE;
 	_availableOptions = new std::vector<BYTE>();
 
@@ -25,6 +25,13 @@ void CMazeGenerator::setMazeSize(int x, int y) {
 //
 void CMazeGenerator::generateMaze() {
 	_generateMaze(0, 0);
+}
+
+// -- getMaze --
+// Methode git das generierte Labyrinth zurück
+//
+Maze CMazeGenerator::getMaze() {
+	return *_mazeData;
 }
 
 // -- resetMazeData --

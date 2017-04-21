@@ -15,6 +15,7 @@
 #define PATH_R 0x01 // Pfad rechts
 
 typedef unsigned char BYTE;
+typedef std::vector<std::vector<BYTE>> Maze;
 
 // CMazeGenerator
 class CMazeGenerator {
@@ -33,13 +34,14 @@ public:
 	// -- Methoden --
 	void setMazeSize(int x, int y);
 	void generateMaze();
+	Maze getMaze();
 
 private:
 
 	// -- Member Vars --
 	MazeSize *_mazeSize;
 
-	std::vector<std::vector<BYTE>> *_mazeData;
+	Maze *_mazeData;
 
 	std::vector<BYTE> *_availableOptions;
 	BYTE *_curOption;

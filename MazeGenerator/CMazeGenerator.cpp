@@ -25,6 +25,14 @@ void CMazeGenerator::setMazeSize(int x, int y) {
 //
 void CMazeGenerator::generateMaze() {
 	_generateMaze(0, 0);
+	for (int y = 0; y < _mazeData->size(); y++) {
+		for (int x = 0; x < _mazeData->at(y).size(); x++) {
+			if (_mazeData->at(y).at(x) == 0) {
+				_connectPixel(x, y);
+				_generateMaze(x, y);
+			}
+		}
+	}
 }
 
 // -- getMaze --
@@ -94,9 +102,27 @@ void CMazeGenerator::_generateMaze(int x, int y) {
 		else if (*_curOption == PATH_D)
 			y++;
 		_getAvailableOptions(x, y);
+		_mazeData->at(y).at(x) |= IS_PATH;
 	}
 }
 
+// -- _connectPixel --
+// Methode Verbindet einen Pixel bzw einen Knoten mit einer anderen
+// Labyrinth-Bahn und erzeugt so eine neue Kreuzung
+// @param x, y: Punkt der mit einem umliegenden Punkt verbunden werdens soll
+//
+void CMazeGenerator::_connectPixel(int x, int y) {
+	_availableOptions->clear();
+	if (_getCellData(x + 1, y) > 0)
+		_availableOptions->push_back(PATH_R);
+	if (_getCellData(x - 1, y) > 0)
+		_availableOptions->push_back(PATH_L);
+	if (_getCellData(x, y + 1) > 0)
+		_availableOptions->push_back(PATH_D);
+	if (_getCellData(x, y - 1) > 0)
+		_availableOptions->push_back(PATH_U);
+	_mazeData->at(y).at(x) |= _availableOptions->at(rand() % _availableOptions->size());
+}
 
 // -- Destruktor --
 CMazeGenerator::~CMazeGenerator() {

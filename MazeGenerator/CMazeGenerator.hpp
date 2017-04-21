@@ -13,6 +13,7 @@
 #define PATH_U 0x04 // Pfad hoch
 #define PATH_D 0x02 // Pfad runter
 #define PATH_R 0x01 // Pfad rechts
+#define IS_PATH 0x10 // Legt den Punkt als Teil eines Pfads fest
 
 typedef unsigned char BYTE;
 typedef std::vector<std::vector<BYTE>> Maze;
@@ -51,6 +52,7 @@ private:
 	int  _getCellData(int x, int y);
 	void _getAvailableOptions(int x, int y);
 	void _generateMaze(int x, int y);
+	void _connectPixel(int x, int y);
 
 };
 

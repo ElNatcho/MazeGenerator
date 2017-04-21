@@ -1,6 +1,10 @@
-#include<iostream>
+#include"CMazeGenerator.hpp"
 
 int main() {
-	std::cout << "Hallo, Welt!" << std::endl;
+	CMazeGenerator *mazeGenerator = new CMazeGenerator();
+
+	mazeGenerator->setMazeSize(7, 7);
+	mazeGenerator->generateMaze();
+
 	return 0;
 }

@@ -78,13 +78,13 @@ void CMazeGenerator::_generateMaze(int x, int y) {
 	while (_availableOptions->size() > 0) {
 		*_curOption = _availableOptions->at(rand() % _availableOptions->size());
 		_mazeData->at(y).at(x) |= *_curOption;
-		if ((*_curOption & PATH_L) >> 3)
+		if (*_curOption == PATH_L)
 			x--;
-		else if (*_curOption & PATH_R)
+		else if (*_curOption == PATH_R)
 			x++;
-		else if (*_curOption & PATH_U >> 2)
+		else if (*_curOption == PATH_U)
 			y--;
-		else if (*_curOption & PATH_D >> 1)
+		else if (*_curOption == PATH_D)
 			y++;
 		_getAvailableOptions(x, y);
 	}

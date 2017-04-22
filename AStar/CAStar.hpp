@@ -20,6 +20,7 @@ public:
 		int y;
 		int origin_x;
 		int origin_y;
+		int turn_num;
 		double dist;
 	};
 

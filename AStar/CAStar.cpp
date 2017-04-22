@@ -70,6 +70,7 @@ void CAStar::setPoints(int bx, int by, int ex, int ey) {
 	_endP.dist = 0;
 	_beginP.x = bx;
 	_beginP.y = by;
+	_beginP.turn_num = 0;
 	_beginP.dist = _getDist(_endP, _beginP);
 }
 
@@ -136,7 +137,9 @@ void CAStar::_addPoint(std::vector<Point> *l, int x, int y, int ox, int oy) {
 	_tmpP.y = y;
 	_tmpP.origin_x = ox;
 	_tmpP.origin_y = oy;
+	_tmpP.turn_num = _curP.turn_num + 1;
 	_tmpP.dist = _getDist(_tmpP, _endP);
+	_tmpP.dist += (_tmpP.dist / _beginP.dist) * (double)_curP.turn_num;
 	l->push_back(_tmpP);
 }
 

@@ -5,6 +5,8 @@
 #include<SFML\Graphics.hpp>
 #include<iostream>
 
+#define SAFE_DELETE(X) {if(X!=nullptr){delete(X); X=nullptr;}}
+
 // CImgRenderer
 class CImgRenderer {
 public:
@@ -19,11 +21,11 @@ public:
 private:
 
 	// -- Member Vars --
-	sf::RenderWindow _win;
-	sf::Event _sfEvent;
+	sf::RenderWindow *_win;
+	sf::Event *_sfEvent;
 
-	sf::Sprite _spr;
-	sf::Texture _tex;
+	sf::Sprite  *_spr;
+	sf::Texture *_tex;
 };
 
 #endif

@@ -11,7 +11,7 @@ MazeGenerator x y img_path [conProbability]
 "conProbability" (Optional): Wahrscheinlichkeit für das Generieren von zufälligen Verbindungen zwischen Wegen
 
 Beispiel: 50 x 30  
-![50x30](https://cloud.githubusercontent.com/assets/21142935/25276882/9b936b6e-269c-11e7-9312-327091b00dbe.png)
+![50x30](https://cloud.githubusercontent.com/assets/21142935/25306511/b1c3ff96-278e-11e7-8b22-31a48e31181e.png)
 
 # AStar
 

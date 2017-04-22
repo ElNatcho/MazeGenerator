@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26403.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MazeGenerator", "MazeGenerator\MazeGenerator.vcxproj", "{670AE5F6-B73B-42C0-A763-66F9CB4E3DDF}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AStar", "AStar\AStar.vcxproj", "{DAF3180F-C279-47D9-A52D-C81B7F5C4A73}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{670AE5F6-B73B-42C0-A763-66F9CB4E3DDF}.Release|x64.Build.0 = Release|x64
 		{670AE5F6-B73B-42C0-A763-66F9CB4E3DDF}.Release|x86.ActiveCfg = Release|Win32
 		{670AE5F6-B73B-42C0-A763-66F9CB4E3DDF}.Release|x86.Build.0 = Release|Win32
+		{DAF3180F-C279-47D9-A52D-C81B7F5C4A73}.Debug|x64.ActiveCfg = Debug|x64
+		{DAF3180F-C279-47D9-A52D-C81B7F5C4A73}.Debug|x64.Build.0 = Debug|x64
+		{DAF3180F-C279-47D9-A52D-C81B7F5C4A73}.Debug|x86.ActiveCfg = Debug|Win32
+		{DAF3180F-C279-47D9-A52D-C81B7F5C4A73}.Debug|x86.Build.0 = Debug|Win32
+		{DAF3180F-C279-47D9-A52D-C81B7F5C4A73}.Release|x64.ActiveCfg = Release|x64
+		{DAF3180F-C279-47D9-A52D-C81B7F5C4A73}.Release|x64.Build.0 = Release|x64
+		{DAF3180F-C279-47D9-A52D-C81B7F5C4A73}.Release|x86.ActiveCfg = Release|Win32
+		{DAF3180F-C279-47D9-A52D-C81B7F5C4A73}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

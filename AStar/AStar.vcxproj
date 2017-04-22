@@ -20,9 +20,9 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{670AE5F6-B73B-42C0-A763-66F9CB4E3DDF}</ProjectGuid>
+    <ProjectGuid>{DAF3180F-C279-47D9-A52D-C81B7F5C4A73}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>MazeGenerator</RootNamespace>
+    <RootNamespace>AStar</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.14393.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -147,13 +147,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="CMazeGenerator.cpp" />
-    <ClCompile Include="CMazeSaver.cpp" />
+    <ClCompile Include="CAStar.cpp" />
+    <ClCompile Include="CImgRenderer.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CMazeGenerator.hpp" />
-    <ClInclude Include="CMazeSaver.hpp" />
+    <ClInclude Include="CAStar.hpp" />
+    <ClInclude Include="CImgRenderer.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

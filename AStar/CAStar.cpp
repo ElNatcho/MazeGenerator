@@ -11,6 +11,9 @@ CAStar::CAStar() {
 	_tmpDist = new double;
 	_openList = new std::vector<Point>();
 	_closedList = new std::vector<Point>();*/
+
+	// Alloc Memory
+	_imgRenderer = new CImgRenderer();
 }
 
 // -- solve --
@@ -25,7 +28,7 @@ sf::Image CAStar::solve(std::string path) {
 	_openList.push_back(_beginP);
 	_getBestPoint();
 	_img.setPixel(_curP.x, _curP.y, sf::Color::Red);
-	_imgRenderer.render(_img);
+	_imgRenderer->render(_img);
 
 	while (true && _openList.size() > 0) {
 		// Testen ob der Endpunkt erreicht wurde
@@ -48,7 +51,7 @@ sf::Image CAStar::solve(std::string path) {
 		_getBestPoint();
 
 		_img.setPixel(_curP.x, _curP.y, sf::Color::Red);
-		_imgRenderer.render(_img);
+		_imgRenderer->render(_img);
 	}
 
 	_buildPath();
@@ -154,13 +157,13 @@ bool CAStar::_pointIsValid(int x, int y) {
 //
 void CAStar::_buildPath() {
 	_img.setPixel(_curP.x, _curP.y, sf::Color::Yellow);
-	_imgRenderer.render(_img);
+	_imgRenderer->render(_img);
 	for (int i = _closedList.size() - 1; i >= 0; i--) {
 		if (_curP.origin_x == _closedList.at(i).x &&
 			_curP.origin_y == _closedList.at(i).y) {
 			_curP = _closedList.at(i);
 			_img.setPixel(_curP.x, _curP.y, sf::Color::Yellow);
-			_imgRenderer.render(_img);
+			_imgRenderer->render(_img);
 		}
 
 	}

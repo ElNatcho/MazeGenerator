@@ -7,6 +7,8 @@
 
 #define SAFE_DELETE(X) {if(X!=nullptr){delete(X); X=nullptr;}}
 
+#define LONGER_SIDE 600.F
+
 // CImgRenderer
 class CImgRenderer {
 public:
@@ -26,6 +28,10 @@ private:
 
 	sf::Sprite  *_spr;
 	sf::Texture *_tex;
+
+	float *_tmpScale;
+	bool  *_isSet;
+
 };
 
 #endif

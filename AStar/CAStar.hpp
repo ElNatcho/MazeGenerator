@@ -45,7 +45,7 @@ private:
 
 	double _tmpDist;
 
-	CImgRenderer _imgRenderer;
+	CImgRenderer *_imgRenderer;
 
 	// -- Member Methoden --
 	double _getDist(Point p1, Point p2);

@@ -26,4 +26,4 @@ AStar.exe img_path
 bzw. es wird via Drag and Drop der Bilddatei auf die Exe gestartet.
 
 Beispiel: 275 x 275  
-![275x275_solved](https://cloud.githubusercontent.com/assets/21142935/25305181/f5b6bcb0-2776-11e7-9e3e-f8b03fff425f.png)
+![200x200_solved](https://cloud.githubusercontent.com/assets/21142935/25306502/5f7573b4-278e-11e7-86e7-9fe83b1b3165.png)

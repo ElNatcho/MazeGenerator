@@ -33,6 +33,7 @@ public:
 	~CMazeGenerator();
 
 	// -- Methoden --
+	void setConProbability(int p);
 	void setMazeSize(int x, int y);
 	void generateMaze();
 	Maze getMaze();
@@ -46,6 +47,8 @@ private:
 
 	std::vector<BYTE> *_availableOptions;
 	BYTE *_curOption;
+
+	int *_conProbability;
 
 	// -- Member Methoden --
 	void _createMazeData();

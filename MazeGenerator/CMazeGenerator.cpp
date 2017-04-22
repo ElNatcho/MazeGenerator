@@ -6,8 +6,16 @@ CMazeGenerator::CMazeGenerator() {
 	_mazeSize = new MazeSize();
 	_mazeData = new Maze();
 	_curOption = new BYTE;
+	_conProbability = new int;
 	_availableOptions = new std::vector<BYTE>();
 
+}
+
+// -- setConProbability --
+// Methode legt die Wahrscheinlichkeit für Verbindungen fest
+// @param p: Verbindungs Wahrscheinlichkeit
+void CMazeGenerator::setConProbability(int p) {
+	*_conProbability = p;
 }
 
 // -- setMazeSize --
@@ -91,8 +99,15 @@ void CMazeGenerator::_getAvailableOptions(int x, int y) {
 void CMazeGenerator::_generateMaze(int x, int y) {
 	_getAvailableOptions(x, y);
 	while (_availableOptions->size() > 0) {
+		// Zufällige Bewegungsrichtung auswählen
 		*_curOption = _availableOptions->at(rand() % _availableOptions->size());
 		_mazeData->at(y).at(x) |= *_curOption;
+		// Zufällige Verbindungen erzeugen
+		if (_availableOptions->size() <= 2) {
+			if (rand() % 100 < *_conProbability) {
+				_connectPixel(x, y);
+			}
+		}
 		if (*_curOption == PATH_L)
 			x--;
 		else if (*_curOption == PATH_R)
@@ -101,6 +116,7 @@ void CMazeGenerator::_generateMaze(int x, int y) {
 			y--;
 		else if (*_curOption == PATH_D)
 			y++;
+		// Alle zurzeit verfügbaren Bewegungsrichtungen abfragen
 		_getAvailableOptions(x, y);
 		_mazeData->at(y).at(x) |= IS_PATH;
 	}
@@ -121,7 +137,8 @@ void CMazeGenerator::_connectPixel(int x, int y) {
 		_availableOptions->push_back(PATH_D);
 	if (_getCellData(x, y - 1) > 0)
 		_availableOptions->push_back(PATH_U);
-	_mazeData->at(y).at(x) |= _availableOptions->at(rand() % _availableOptions->size());
+	if(_availableOptions->size() > 0)
+		_mazeData->at(y).at(x) |= _availableOptions->at(rand() % _availableOptions->size());
 }
 
 // -- Destruktor --
@@ -131,4 +148,5 @@ CMazeGenerator::~CMazeGenerator() {
 	SAFE_DELETE(_mazeData);
 	SAFE_DELETE(_curOption);
 	SAFE_DELETE(_availableOptions);
+	SAFE_DELETE(_conProbability);
 }

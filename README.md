@@ -19,10 +19,10 @@ Ist das Programm fertig speichert es das Labyrinth-Bild mit dem eingezeichneten 
 
 Es wird mithilfe von Kommandozeilenparametern gestartet:
 
-AStar.exe img_path
+AStar.exe img_path  
 "img_path" Pfad zum/Name des Labyrinth-Bildes
 
 bzw. es wird via Drag and Drop der Bilddatei auf die Exe gestartet.
 
-Beispiel: 275 x 275
+Beispiel: 275 x 275  
 ![275x275_solved](https://cloud.githubusercontent.com/assets/21142935/25305181/f5b6bcb0-2776-11e7-9e3e-f8b03fff425f.png)

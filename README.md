@@ -1,6 +1,6 @@
 # MazeGenerator
 
-Ein einfaches Programm, dass ein Labyrinth in einer beliebigen Größe generiert und als monochromes Bild in einer Datei speichert.
+Ein einfaches Programm, das ein Labyrinth in einer beliebigen Größe generiert und als monochromes Bild in einer Datei speichert.
 
 Es wird mithilfe von Kommandozeilenparametern gestartet:
 
